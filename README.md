@@ -2,7 +2,12 @@
 
 An AI-powered UPI fraud detection project that identifies potentially suspicious transactions using statistical outlier detection, machine learning, time-series analysis, and fraud risk scoring.
 
-The project includes a complete data processing pipeline, anomaly detection models, a FastAPI backend, and an interactive Streamlit dashboard.
+The project includes a data processing pipeline, anomaly detection models, a FastAPI backend, and an interactive Streamlit dashboard.
+
+## 🔗 Live Demo
+
+🚀 **Streamlit Dashboard:**  
+https://upi-fraud-detection-ai-1137.streamlit.app/
 
 ---
 
@@ -35,40 +40,46 @@ UPI transactions can exhibit unusual patterns, including:
 
 The goal of this project is to identify potentially suspicious transactions and categorize them according to their calculated risk level.
 
-> Note: This project is a prototype for learning and demonstration. It does not guarantee real-world fraud detection accuracy.
+> **Note:** This project is a prototype for learning and demonstration. It does not guarantee real-world fraud detection accuracy.
 
 ---
 
 ## 🚀 Key Features
 
 ### 1. Synthetic Data Generation
+
 - Generates sample UPI transaction records
 - Includes transaction amount, timestamp, sender, receiver, and transaction details
 - Supports experimentation with fraud detection techniques
 
 ### 2. Data Preprocessing
+
 - Timestamp conversion
 - Feature engineering
 - Transaction behavior analysis
 - Sender-level aggregation
 
 ### 3. IQR Outlier Detection
+
 - Calculates Q1 and Q3
 - Computes the Interquartile Range (IQR)
 - Identifies statistical outliers in transaction amounts
 
 ### 4. Isolation Forest
+
 - Detects potentially anomalous transactions
 - Uses transaction behavior and amount-related features
 - Produces anomaly predictions and scores
 
 ### 5. Time-Series Anomaly Detection
+
 - Aggregates transactions by hour
 - Calculates transaction volume and amount statistics
 - Uses rolling averages and standard deviation
 - Identifies unusual hourly activity
 
 ### 6. Fraud Risk Scoring
+
 The project combines multiple detection signals:
 
 - IQR outlier detection
@@ -79,24 +90,15 @@ The project combines multiple detection signals:
 
 The signals are combined to calculate a fraud risk score.
 
-### 7. FastAPI Backend
-Provides API endpoints for:
+#### Risk Categories
 
-- Transaction summaries
-- Transaction retrieval
-- Risk-based filtering
-- Individual transaction lookup
+| Risk Score | Category |
+|---|---|
+| 0–39 | Low Risk |
+| 40–69 | Medium Risk |
+| 70–100 | High Risk |
 
-### 8. Streamlit Dashboard
-Provides an interactive dashboard with:
-
-- Key performance indicators
-- Risk category distribution
-- Risk score distribution
-- Hourly transaction analysis
-- Anomaly comparison
-- High-risk transaction table
-- CSV download functionality
+> The score is a heuristic risk indicator and should not be interpreted as a verified probability of fraud.
 
 ---
 
